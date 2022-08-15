@@ -21,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		63BC138228AAC1B900DFBEA1 /* TBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBX.swift; sourceTree = "<group>"; };
+		63BC138428AAC25100DFBEA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63C4ADCA28AAAFF100BEFE6C /* TBX Scope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBX Scope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C4ADCD28AAAFF100BEFE6C /* TBX_ScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBX_ScopeApp.swift; sourceTree = "<group>"; };
 		63C4ADCF28AAAFF100BEFE6C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		63C4ADC128AAAFF100BEFE6C = {
 			isa = PBXGroup;
 			children = (
+				63BC138428AAC25100DFBEA1 /* README.md */,
 				63C4ADCC28AAAFF100BEFE6C /* TBX Scope */,
 				63C4ADCB28AAAFF100BEFE6C /* Products */,
 			);
