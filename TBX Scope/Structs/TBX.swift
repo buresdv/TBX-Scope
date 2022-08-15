@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct TBX {
+    var title: String
+    var description: String
+    
+    var terms: [Term]
+}

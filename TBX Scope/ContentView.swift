@@ -13,27 +13,36 @@ struct ContentView: View {
     @ObservedObject var parsedTBX = ParsedTBX()
     
     @State private var selectedFile: URL?
+    @State private var isShowingMoreInfo: Bool = false
     
     var body: some View {
         VStack {
-            
-            if selectedFile != nil {
-                Text(selectedFile!.absoluteString)
-            } else {
-                Text("No File Selected")
-            }
-
             switch appState.loading {
             case .ready:
                 Text("Ready to load")
             case .loading:
+                ProgressView()
                 Text("Loading")
             case .finished:
-                Text(parsedTBX.title)
-                    .font(.headline)
+                
+                VStack {
+                    
+                    if isShowingMoreInfo {
+
+                        VStack {
+                            Text(parsedTBX.contents.description)
+                        }
+                        .padding(1)
+                        
+                    }
+                    List {
+                        ForEach(parsedTBX.contents.terms) { term in
+                            TermItem(term: term)
+                        }
+                    }
+                }
             }
         }
-        .padding()
         .frame(minWidth: 400, minHeight: 200)
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
@@ -46,7 +55,7 @@ struct ContentView: View {
                                 let contentsOfTBX: String = try await loadContentsOfFile(path: selectedFile!)
                                 
                                 
-                                parsedTBX.title = try! parseXML(from: contentsOfTBX)
+                                parsedTBX.contents = try! parseXML(from: contentsOfTBX)
                                 
                                 appState.loading = .finished
                             } catch let error as NSError {
@@ -60,8 +69,19 @@ struct ContentView: View {
                     Label("Open TBX File", systemImage: "plus")
                     
                 }
+                
+                if appState.loading == .finished {
+                    Button {
+                        withAnimation {
+                            isShowingMoreInfo.toggle()
+                        }
+                    } label: {
+                        Label("TBX Info", systemImage: "info")
+                    }
+                }
             }
         }
-        .navigationSubtitle(Text(parsedTBX.title))
+        .navigationTitle(Text(parsedTBX.contents.title))
+        .navigationSubtitle("\(parsedTBX.contents.terms.count == 1 ? 0 : parsedTBX.contents.terms.count) items loaded")
     }
 }
