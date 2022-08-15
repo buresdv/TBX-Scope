@@ -7,19 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63BC138328AAC1B900DFBEA1 /* TBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138228AAC1B900DFBEA1 /* TBX.swift */; };
 		63C4ADCE28AAAFF100BEFE6C /* TBX_ScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4ADCD28AAAFF100BEFE6C /* TBX_ScopeApp.swift */; };
 		63C4ADD028AAAFF100BEFE6C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4ADCF28AAAFF100BEFE6C /* ContentView.swift */; };
 		63C4ADD228AAAFF200BEFE6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C4ADD128AAAFF200BEFE6C /* Assets.xcassets */; };
 		63C4ADD528AAAFF200BEFE6C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C4ADD428AAAFF200BEFE6C /* Preview Assets.xcassets */; };
+		63C4ADDE28AAB05600BEFE6C /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 63C4ADDD28AAB05600BEFE6C /* SwiftyXMLParser */; };
+		63C4ADE228AAB0C800BEFE6C /* Select File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4ADE128AAB0C800BEFE6C /* Select File.swift */; };
+		63C4ADE428AAB50C00BEFE6C /* Load Contents of File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4ADE328AAB50C00BEFE6C /* Load Contents of File.swift */; };
+		63C4ADE628AAB5E900BEFE6C /* App State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4ADE528AAB5E900BEFE6C /* App State.swift */; };
+		63C4ADE828AAB7FA00BEFE6C /* Parse XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4ADE728AAB7FA00BEFE6C /* Parse XML.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63BC138228AAC1B900DFBEA1 /* TBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBX.swift; sourceTree = "<group>"; };
 		63C4ADCA28AAAFF100BEFE6C /* TBX Scope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBX Scope.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C4ADCD28AAAFF100BEFE6C /* TBX_ScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBX_ScopeApp.swift; sourceTree = "<group>"; };
 		63C4ADCF28AAAFF100BEFE6C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		63C4ADD128AAAFF200BEFE6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63C4ADD428AAAFF200BEFE6C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63C4ADD628AAAFF200BEFE6C /* TBX_Scope.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TBX_Scope.entitlements; sourceTree = "<group>"; };
+		63C4ADE128AAB0C800BEFE6C /* Select File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Select File.swift"; sourceTree = "<group>"; };
+		63C4ADE328AAB50C00BEFE6C /* Load Contents of File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Load Contents of File.swift"; sourceTree = "<group>"; };
+		63C4ADE528AAB5E900BEFE6C /* App State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App State.swift"; sourceTree = "<group>"; };
+		63C4ADE728AAB7FA00BEFE6C /* Parse XML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parse XML.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,12 +38,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C4ADDE28AAB05600BEFE6C /* SwiftyXMLParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63BC138128AAC18800DFBEA1 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				63BC138228AAC1B900DFBEA1 /* TBX.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		63C4ADC128AAAFF100BEFE6C = {
 			isa = PBXGroup;
 			children = (
@@ -52,11 +72,15 @@
 		63C4ADCC28AAAFF100BEFE6C /* TBX Scope */ = {
 			isa = PBXGroup;
 			children = (
+				63BC138128AAC18800DFBEA1 /* Structs */,
+				63C4ADE028AAB07C00BEFE6C /* Views */,
+				63C4ADDF28AAB07700BEFE6C /* Logic */,
 				63C4ADCD28AAAFF100BEFE6C /* TBX_ScopeApp.swift */,
 				63C4ADCF28AAAFF100BEFE6C /* ContentView.swift */,
 				63C4ADD128AAAFF200BEFE6C /* Assets.xcassets */,
 				63C4ADD628AAAFF200BEFE6C /* TBX_Scope.entitlements */,
 				63C4ADD328AAAFF200BEFE6C /* Preview Content */,
+				63C4ADE528AAB5E900BEFE6C /* App State.swift */,
 			);
 			path = "TBX Scope";
 			sourceTree = "<group>";
@@ -67,6 +91,23 @@
 				63C4ADD428AAAFF200BEFE6C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		63C4ADDF28AAB07700BEFE6C /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				63C4ADE128AAB0C800BEFE6C /* Select File.swift */,
+				63C4ADE328AAB50C00BEFE6C /* Load Contents of File.swift */,
+				63C4ADE728AAB7FA00BEFE6C /* Parse XML.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		63C4ADE028AAB07C00BEFE6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +126,9 @@
 			dependencies = (
 			);
 			name = "TBX Scope";
+			packageProductDependencies = (
+				63C4ADDD28AAB05600BEFE6C /* SwiftyXMLParser */,
+			);
 			productName = "TBX Scope";
 			productReference = 63C4ADCA28AAAFF100BEFE6C /* TBX Scope.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 63C4ADC128AAAFF100BEFE6C;
+			packageReferences = (
+				63C4ADDC28AAB05600BEFE6C /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
+			);
 			productRefGroup = 63C4ADCB28AAAFF100BEFE6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,7 +187,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				63C4ADD028AAAFF100BEFE6C /* ContentView.swift in Sources */,
+				63C4ADE428AAB50C00BEFE6C /* Load Contents of File.swift in Sources */,
+				63BC138328AAC1B900DFBEA1 /* TBX.swift in Sources */,
+				63C4ADE228AAB0C800BEFE6C /* Select File.swift in Sources */,
 				63C4ADCE28AAAFF100BEFE6C /* TBX_ScopeApp.swift in Sources */,
+				63C4ADE828AAB7FA00BEFE6C /* Parse XML.swift in Sources */,
+				63C4ADE628AAB5E900BEFE6C /* App State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63C4ADDC28AAB05600BEFE6C /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yahoojapan/SwiftyXMLParser.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63C4ADDD28AAB05600BEFE6C /* SwiftyXMLParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63C4ADDC28AAB05600BEFE6C /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */;
+			productName = SwiftyXMLParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63C4ADC228AAAFF100BEFE6C /* Project object */;
 }
