@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6359044E28ABA15C00653DBA /* Load Everything Up.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359044D28ABA15C00653DBA /* Load Everything Up.swift */; };
 		63BC138328AAC1B900DFBEA1 /* TBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138228AAC1B900DFBEA1 /* TBX.swift */; };
 		63BC138628AAC2D200DFBEA1 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138528AAC2D200DFBEA1 /* Term.swift */; };
 		63BC138828AAE98900DFBEA1 /* TermItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138728AAE98900DFBEA1 /* TermItem.swift */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6359044D28ABA15C00653DBA /* Load Everything Up.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Load Everything Up.swift"; sourceTree = "<group>"; };
 		63BC138228AAC1B900DFBEA1 /* TBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBX.swift; sourceTree = "<group>"; };
 		63BC138428AAC25100DFBEA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63BC138528AAC2D200DFBEA1 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				63C4ADE128AAB0C800BEFE6C /* Select File.swift */,
 				63C4ADE328AAB50C00BEFE6C /* Load Contents of File.swift */,
 				63C4ADE728AAB7FA00BEFE6C /* Parse XML.swift */,
-				6359044D28ABA15C00653DBA /* Load Everything Up.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -200,7 +197,6 @@
 				63BC138828AAE98900DFBEA1 /* TermItem.swift in Sources */,
 				63C4ADD028AAAFF100BEFE6C /* ContentView.swift in Sources */,
 				63C4ADE428AAB50C00BEFE6C /* Load Contents of File.swift in Sources */,
-				6359044E28ABA15C00653DBA /* Load Everything Up.swift in Sources */,
 				63BC138328AAC1B900DFBEA1 /* TBX.swift in Sources */,
 				63C4ADE228AAB0C800BEFE6C /* Select File.swift in Sources */,
 				63C4ADCE28AAAFF100BEFE6C /* TBX_ScopeApp.swift in Sources */,

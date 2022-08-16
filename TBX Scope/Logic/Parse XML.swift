@@ -31,6 +31,8 @@ func parseXML(from string: String) throws -> TBX {
         
         let parsedTermID: String = hit.attributes["id"]!
         
+        let parsedTermNote: String = hit["langSet", 0, "ntig", "termGrp", "termNote"].text!
+        
         // Get the term's description
         let parsedTermDescription: String = hit[pathToSourceDescription].text ?? ""
         
@@ -43,7 +45,7 @@ func parseXML(from string: String) throws -> TBX {
             parsedTargetTermStorage.append(hit["termGrp", "term"].text!)
         }
         
-        parsedTermStorage.append(Term(id: parsedTermID, sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, description: parsedTermDescription))
+        parsedTermStorage.append(Term(id: parsedTermID, sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, termNote: parsedTermNote, description: parsedTermDescription))
     }
     
     return TBX(title: parsedTitle, description: parsedDescription, terms: parsedTermStorage)

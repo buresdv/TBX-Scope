@@ -36,9 +36,12 @@ struct ContentView: View {
                         .padding(1)
                         
                     }
-                    List {
-                        ForEach(parsedTBX.contents.terms) { term in
-                            TermItem(term: term)
+                    
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(parsedTBX.contents.terms) { term in
+                                TermItem(term: term)
+                            }
                         }
                     }
                 }
