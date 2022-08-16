@@ -29,7 +29,9 @@ func parseXML(from string: String) throws -> TBX {
         var parsedSourceTermStorage = [String]()
         var parsedTargetTermStorage = [String]()
         
-        // Print the term's description
+        let parsedTermID: String = hit.attributes["id"]!
+        
+        // Get the term's description
         let parsedTermDescription: String = hit[pathToSourceDescription].text ?? ""
         
         for hit in hit[pathToSourceTerms] {
@@ -41,7 +43,7 @@ func parseXML(from string: String) throws -> TBX {
             parsedTargetTermStorage.append(hit["termGrp", "term"].text!)
         }
         
-        parsedTermStorage.append(Term(sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, description: parsedTermDescription))
+        parsedTermStorage.append(Term(id: parsedTermID, sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, description: parsedTermDescription))
     }
     
     return TBX(title: parsedTitle, description: parsedDescription, terms: parsedTermStorage)

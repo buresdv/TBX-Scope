@@ -8,7 +8,7 @@
 import Foundation
 
 struct Term: Identifiable {
-    let id: UUID = UUID()
+    let id: String
     
     let sourceTerm: [String]
     let targetTerm: [String]

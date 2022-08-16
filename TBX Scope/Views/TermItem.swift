@@ -15,14 +15,14 @@ struct TermItem: View {
         VStack(spacing: 5) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
-                    Text(term.sourceTerm.joined(separator: ", "))
+                    Text(term.sourceTerm.joined(separator: "\n"))
                     /*ForEach(term.sourceTerm, id: \.self) { sourceTerm in
                         Text(sourceTerm)
                     }*/
                 }
                 
                 VStack(alignment: .leading) {
-                    Text(term.targetTerm.joined(separator: ", "))
+                    Text(term.targetTerm.joined(separator: "\n"))
                     /*ForEach(term.targetTerm, id: \.self) { targetTerm in
                         Text(targetTerm)
                     }*/
@@ -31,13 +31,14 @@ struct TermItem: View {
             
             Text(term.description)
                 .font(.caption)
+                .foregroundColor(Color(NSColor.secondaryLabelColor))
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
 
 struct TermItem_Previews: PreviewProvider {
     static var previews: some View {
-        TermItem(term: Term(sourceTerm: ["One", "Two"], targetTerm: ["three", "four", "five"], description: "This is some long-ass description of what this term is about"))
+        TermItem(term: Term(id: "1ertz", sourceTerm: ["One", "Two"], targetTerm: ["three", "four", "five"], description: "This is some long-ass description of what this term is about"))
     }
 }

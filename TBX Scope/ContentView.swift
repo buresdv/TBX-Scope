@@ -31,6 +31,7 @@ struct ContentView: View {
 
                         VStack {
                             Text(parsedTBX.contents.description)
+                                .font(.subheadline)
                         }
                         .padding(1)
                         
