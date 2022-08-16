@@ -29,11 +29,14 @@ struct ContentView: View {
                     
                     if isShowingMoreInfo {
 
-                        VStack {
+                        TBXInfoView(data: parsedTBX)
+                            .padding()
+                        
+                        /*VStack {
                             Text(parsedTBX.contents.description)
                                 .font(.subheadline)
                         }
-                        .padding(1)
+                        .padding(1)*/
                         
                     }
                     

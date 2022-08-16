@@ -39,8 +39,12 @@ struct TermItem: View {
             Text(term.description)
                 .font(.caption)
                 .foregroundColor(Color(NSColor.secondaryLabelColor))
+            
         }
-        .padding(.horizontal)
+        .padding()
+        .textSelection(.enabled)
+        
+        Divider()
     }
 }
 
