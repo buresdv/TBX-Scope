@@ -21,3 +21,4 @@ Here are the things that are implemented, and things that are still left to impl
 - [ ] Showing more metadata
 - [ ] Support for TBXs that have more than two languages
 - [ ] Support for more tags (like *source*, *context* and *date*)
+- [ ] Anything else that might come up
