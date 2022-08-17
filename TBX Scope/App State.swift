@@ -19,5 +19,5 @@ class AppState: ObservableObject {
 }
 
 class ParsedTBX: ObservableObject {
-    @Published var contents = TBX(title: "TBX Scope", description: "No TBX Selected", terms: [Term(id: "1abcd", sourceTerm: ["No TBX Selected"], targetTerm: ["No TBX Selected"], termNote: "No TBX Selected", description: "No TBX Selected")])
+    @Published var contents = TBX(title: "TBX Scope", description: "No TBX Selected", terms: [Term(id: "1abcd", sourceTerm: ["No TBX Selected"], targetTerm: ["No TBX Selected"], termNote: "No TBX Selected", termContext: "No TBX Selected", description: "No TBX Selected")])
 }

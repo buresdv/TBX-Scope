@@ -14,6 +14,7 @@ struct Term: Identifiable {
     let targetTerm: [String]
 
     let termNote: String?
+    let termContext: String?
 
     let description: String?
 }

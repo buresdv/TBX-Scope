@@ -56,6 +56,6 @@ struct TermItem: View {
 
 struct TermItem_Previews: PreviewProvider {
     static var previews: some View {
-        TermItem(term: Term(id: "1ertz", sourceTerm: ["One", "Two"], targetTerm: ["three", "four", "five"], termNote: "Verb", description: "This is some long-ass description of what this term is about"))
+        TermItem(term: Term(id: "1ertz", sourceTerm: ["One", "Two"], targetTerm: ["three", "four", "five"], termNote: "Verb", termContext: "Some cool context note", description: "This is some long-ass description of what this term is about"))
     }
 }

@@ -45,7 +45,7 @@ func parseXML(from string: String) throws -> TBX {
             parsedTargetTermStorage.append(hit["termGrp", "term"].text!)
         }
         
-        parsedTermStorage.append(Term(id: parsedTermID, sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, termNote: parsedTermNote, description: parsedTermDescription))
+        parsedTermStorage.append(Term(id: parsedTermID, sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, termNote: parsedTermNote, termContext: "Ahoj", description: parsedTermDescription))
     }
     
     return TBX(title: parsedTitle, description: parsedDescription, terms: parsedTermStorage)
