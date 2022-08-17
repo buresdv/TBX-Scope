@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @State private var selectedFile: URL?
     @State private var isShowingMoreInfo: Bool = false
+    @State private var searchString: String = ""
     
     var body: some View {
         VStack {
@@ -28,7 +29,7 @@ struct ContentView: View {
                 VStack {
                     
                     if isShowingMoreInfo {
-
+                        
                         TBXInfoView(data: parsedTBX)
                             .padding()
                             .fixedSize()
@@ -42,6 +43,7 @@ struct ContentView: View {
                             }
                         }
                     }
+                    //.searchable(text: $searchString)
                 }
             }
         }
@@ -86,4 +88,16 @@ struct ContentView: View {
         .navigationTitle(Text(parsedTBX.contents.title))
         .navigationSubtitle("\(parsedTBX.contents.terms.count == 1 ? 0 : parsedTBX.contents.terms.count) items loaded")
     }
+    
+    /*
+    var searchResults: ParsedTBX {
+        if searchString.isEmpty {
+            return parsedTBX
+        } else {
+            return $parsedTBX.filter {
+                $0.contains(searchString)
+            }
+        }
+    }
+    */
 }

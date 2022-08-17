@@ -13,7 +13,7 @@ struct Term: Identifiable {
     let sourceTerm: [String]
     let targetTerm: [String]
 
-    let termNote: String
+    let termNote: String?
 
-    let description: String
+    let description: String?
 }

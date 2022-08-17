@@ -16,12 +16,16 @@ struct TermItem: View {
             HStack(alignment: .top) {
                 VStack(alignment: .trailing) {
                     Text(term.sourceTerm.joined(separator: "\n"))
-                    Text(term.termNote)
-                        .font(.caption2)
-                        .padding(.horizontal, 4)
-                        .background(Color(NSColor.tertiaryLabelColor))
-                        .foregroundColor(.white)
-                        .clipShape(Capsule())
+                    
+                    if let termNote = term.termNote {
+                        Text(termNote)
+                            .font(.caption2)
+                            .padding(.horizontal, 4)
+                            .background(Color(NSColor.tertiaryLabelColor))
+                            .foregroundColor(.white)
+                            .clipShape(Capsule())
+                    }
+                    
                     /*ForEach(term.sourceTerm, id: \.self) { sourceTerm in
                         Text(sourceTerm)
                     }*/
@@ -36,9 +40,11 @@ struct TermItem: View {
                 }
             }
             
-            Text(term.description)
-                .font(.caption)
-                .foregroundColor(Color(NSColor.secondaryLabelColor))
+            if let termDescription = term.description {
+                Text(termDescription)
+                    .font(.caption)
+                    .foregroundColor(Color(NSColor.secondaryLabelColor))
+            }
             
         }
         .padding()

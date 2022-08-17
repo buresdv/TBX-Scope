@@ -31,10 +31,10 @@ func parseXML(from string: String) throws -> TBX {
         
         let parsedTermID: String = hit.attributes["id"]!
         
-        let parsedTermNote: String = hit["langSet", 0, "ntig", "termGrp", "termNote"].text!
+        let parsedTermNote: String? = hit["langSet", 0, "ntig", "termGrp", "termNote"].text
         
         // Get the term's description
-        let parsedTermDescription: String = hit[pathToSourceDescription].text ?? ""
+        let parsedTermDescription: String? = hit[pathToSourceDescription].text
         
         for hit in hit[pathToSourceTerms] {
             parsedSourceTermStorage.append(hit["termGrp", "term"].text!)

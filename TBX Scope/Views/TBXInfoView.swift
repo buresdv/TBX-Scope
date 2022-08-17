@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AppKit
 
 struct TBXInfoView: NSViewRepresentable {
     typealias NSViewType = NSGridView
@@ -24,6 +25,10 @@ struct TBXInfoView: NSViewRepresentable {
         grid.autoresizingMask = [.width, .height]
         
         grid.column(at: 0).xPlacement = .trailing
+        
+        /*NSLayoutConstraint.activate([
+            grid.centerXAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutXAxisAnchor>#>)
+        ])*/
         
         return grid
     }
