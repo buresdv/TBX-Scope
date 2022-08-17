@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6359045028AC076D00653DBA /* TBXInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359044F28AC076D00653DBA /* TBXInfoView.swift */; };
-		6359045328AC0E1900653DBA /* Snímek obrazovky 2022-08-16 v 19.40.11.png in Resources */ = {isa = PBXBuildFile; fileRef = 6359045228AC0E1900653DBA /* Snímek obrazovky 2022-08-16 v 19.40.11.png */; };
 		63BC138328AAC1B900DFBEA1 /* TBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138228AAC1B900DFBEA1 /* TBX.swift */; };
 		63BC138628AAC2D200DFBEA1 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138528AAC2D200DFBEA1 /* Term.swift */; };
 		63BC138828AAE98900DFBEA1 /* TermItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138728AAE98900DFBEA1 /* TermItem.swift */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		6359044F28AC076D00653DBA /* TBXInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBXInfoView.swift; sourceTree = "<group>"; };
-		6359045228AC0E1900653DBA /* Snímek obrazovky 2022-08-16 v 19.40.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Snímek obrazovky 2022-08-16 v 19.40.11.png"; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/Screenshoty/Snímek obrazovky 2022-08-16 v 19.40.11.png"; sourceTree = "<group>"; };
 		63BC138228AAC1B900DFBEA1 /* TBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBX.swift; sourceTree = "<group>"; };
 		63BC138428AAC25100DFBEA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63BC138528AAC2D200DFBEA1 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
@@ -54,14 +52,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6359045128AC0E1000653DBA /* Demo Pics */ = {
-			isa = PBXGroup;
-			children = (
-				6359045228AC0E1900653DBA /* Snímek obrazovky 2022-08-16 v 19.40.11.png */,
-			);
-			path = "Demo Pics";
-			sourceTree = "<group>";
-		};
 		63BC138128AAC18800DFBEA1 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +64,6 @@
 		63C4ADC128AAAFF100BEFE6C = {
 			isa = PBXGroup;
 			children = (
-				6359045128AC0E1000653DBA /* Demo Pics */,
 				63BC138428AAC25100DFBEA1 /* README.md */,
 				63C4ADCC28AAAFF100BEFE6C /* TBX Scope */,
 				63C4ADCB28AAAFF100BEFE6C /* Products */,
@@ -198,7 +187,6 @@
 			files = (
 				63C4ADD528AAAFF200BEFE6C /* Preview Assets.xcassets in Resources */,
 				63C4ADD228AAAFF200BEFE6C /* Assets.xcassets in Resources */,
-				6359045328AC0E1900653DBA /* Snímek obrazovky 2022-08-16 v 19.40.11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

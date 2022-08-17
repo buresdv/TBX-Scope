@@ -21,10 +21,9 @@ struct TBXInfoView: NSViewRepresentable {
         ])
         
         grid.translatesAutoresizingMaskIntoConstraints = false
+        grid.autoresizingMask = [.width, .height]
         
         grid.column(at: 0).xPlacement = .trailing
-        
-        
         
         return grid
     }

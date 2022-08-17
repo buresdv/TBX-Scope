@@ -31,12 +31,7 @@ struct ContentView: View {
 
                         TBXInfoView(data: parsedTBX)
                             .padding()
-                        
-                        /*VStack {
-                            Text(parsedTBX.contents.description)
-                                .font(.subheadline)
-                        }
-                        .padding(1)*/
+                            .fixedSize()
                         
                     }
                     
