@@ -21,9 +21,19 @@ struct ContentView: View {
         if searchString.isEmpty {
             return parsedTBX.contents.terms
         } else {
-            return parsedTBX.contents.terms.filter { term in
+            /*if !parsedTBX.contents.terms.filter({ term in
                 term.sourceTerm.description.localizedCaseInsensitiveContains(searchString)
-            }
+            }).isEmpty {
+                return parsedTBX.contents.terms.filter { term in
+                    term.sourceTerm.description.localizedCaseInsensitiveContains(searchString)
+                }
+            } else {
+                return parsedTBX.contents.terms.filter { term in
+                    term.targetTerm.description.localizedCaseInsensitiveContains(searchString)
+                }
+            }*/
+            
+            return parsedTBX.contents.terms.filter({ $0.sourceTerm.description.localizedCaseInsensitiveContains(searchString) || $0.targetTerm.description.localizedCaseInsensitiveContains(searchString) })
         }
     }
     
