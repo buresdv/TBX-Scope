@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6359045028AC076D00653DBA /* TBXInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359044F28AC076D00653DBA /* TBXInfoView.swift */; };
+		6395874528B023E500C2AB64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395874428B022A100C2AB64 /* AppDelegate.swift */; };
 		63BC138328AAC1B900DFBEA1 /* TBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138228AAC1B900DFBEA1 /* TBX.swift */; };
 		63BC138628AAC2D200DFBEA1 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138528AAC2D200DFBEA1 /* Term.swift */; };
 		63BC138828AAE98900DFBEA1 /* TermItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC138728AAE98900DFBEA1 /* TermItem.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		6359044F28AC076D00653DBA /* TBXInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBXInfoView.swift; sourceTree = "<group>"; };
+		6395874428B022A100C2AB64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BC138228AAC1B900DFBEA1 /* TBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBX.swift; sourceTree = "<group>"; };
 		63BC138428AAC25100DFBEA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63BC138528AAC2D200DFBEA1 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		63C4ADCC28AAAFF100BEFE6C /* TBX Scope */ = {
 			isa = PBXGroup;
 			children = (
+				6395874428B022A100C2AB64 /* AppDelegate.swift */,
 				63BC138128AAC18800DFBEA1 /* Structs */,
 				63C4ADE028AAB07C00BEFE6C /* Views */,
 				63C4ADDF28AAB07700BEFE6C /* Logic */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6395874528B023E500C2AB64 /* AppDelegate.swift in Sources */,
 				63BC138828AAE98900DFBEA1 /* TermItem.swift in Sources */,
 				63C4ADD028AAAFF100BEFE6C /* ContentView.swift in Sources */,
 				63C4ADE428AAB50C00BEFE6C /* Load Contents of File.swift in Sources */,

@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct TBX_ScopeApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    NSWindow.allowsAutomaticWindowTabbing = false
+                }
+        }
+        .commands {
+            CommandGroup(replacing: .newItem) { }
+            CommandGroup(replacing: .pasteboard) { }
+            CommandGroup(replacing: .undoRedo) { }
         }
     }
 }

@@ -14,7 +14,18 @@ struct ContentView: View {
     
     @State private var selectedFile: URL?
     @State private var isShowingMoreInfo: Bool = false
+    
     @State private var searchString: String = ""
+    
+    var searchResults: [Term] {
+        if searchString.isEmpty {
+            return parsedTBX.contents.terms
+        } else {
+            return parsedTBX.contents.terms.filter { term in
+                term.sourceTerm.description.localizedCaseInsensitiveContains(searchString)
+            }
+        }
+    }
     
     var body: some View {
         VStack {
@@ -38,12 +49,12 @@ struct ContentView: View {
                     
                     ScrollView {
                         LazyVStack {
-                            ForEach(parsedTBX.contents.terms) { term in
+                            ForEach(searchResults) { term in
                                 TermItem(term: term)
                             }
                         }
                     }
-                    //.searchable(text: $searchString)
+                    .searchable(text: $searchString)
                 }
             }
         }
@@ -84,6 +95,7 @@ struct ContentView: View {
                     }
                 }
             }
+            
         }
         .navigationTitle(Text(parsedTBX.contents.title))
         .navigationSubtitle("\(parsedTBX.contents.terms.count == 1 ? 0 : parsedTBX.contents.terms.count) items loaded")

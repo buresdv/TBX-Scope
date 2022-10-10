@@ -16,9 +16,9 @@ struct TBXInfoView: NSViewRepresentable {
     
     func makeNSView(context: Context) -> NSGridView {
         let grid = NSGridView (views: [
-            [NSTextField(labelWithString: "Name:"), NSTextField(labelWithString: data.contents.title)],
-            [NSTextField(labelWithString: "Description:"), NSTextField(labelWithString: data.contents.description)],
-            [NSTextField(labelWithString: "Number of terms:"), NSTextField(labelWithString: String(data.contents.terms.count))]
+            [NSTextField(labelWithString: "Name:"), NSTextField(wrappingLabelWithString: data.contents.title)],
+            [NSTextField(labelWithString: "Description:"), NSTextField(wrappingLabelWithString: data.contents.description)],
+            [NSTextField(labelWithString: "Number of terms:"), NSTextField(wrappingLabelWithString: String(data.contents.terms.count))]
         ])
         
         grid.translatesAutoresizingMaskIntoConstraints = false
