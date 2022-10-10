@@ -64,7 +64,7 @@ struct ContentView: View {
                             }
                         }
                     }
-                    .searchable(text: $searchString)
+                    .searchable(text: $searchString).keyboardShortcut("f", modifiers: [.command])
                 }
             }
         }
@@ -94,6 +94,7 @@ struct ContentView: View {
                     Label("Open TBX File", systemImage: "plus")
                     
                 }
+                .keyboardShortcut("o", modifiers: [.command])
                 
                 if appState.loading == .finished {
                     Button {
@@ -103,6 +104,7 @@ struct ContentView: View {
                     } label: {
                         Label("TBX Info", systemImage: "info")
                     }
+                    .keyboardShortcut("i", modifiers: [.command])
                 }
             }
             
