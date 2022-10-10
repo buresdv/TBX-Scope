@@ -29,7 +29,37 @@ struct ContentView: View {
         VStack {
             switch appState.loading {
             case .ready:
-                Text("Ready to load")
+                VStack {
+                    Text("Select TBX File to Load")
+                        .foregroundColor(Color(nsColor: NSColor.lightGray))
+                        .font(.title)
+                    
+                    // TODO: This is code duplication fix it!
+                    Button {
+                        do {
+                            selectedFile = try selectFile()
+                            Task {
+                                do {
+                                    appState.loading = .loading
+                                    let contentsOfTBX: String = try await loadContentsOfFile(path: selectedFile!)
+                                    
+                                    
+                                    parsedTBX.contents = try! parseXML(from: contentsOfTBX)
+                                    
+                                    appState.loading = .finished
+                                } catch let error as NSError {
+                                    print("Failed while reading file: \(error)")
+                                }
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
+                    } label: {
+                        Text("Open TBX File")
+                        
+                    }
+                    .keyboardShortcut("o", modifiers: [.command])
+                }
                 
             case .loading:
                 ProgressView("Loading")
@@ -57,7 +87,7 @@ struct ContentView: View {
                 }
             }
         }
-        .frame(minWidth: 400, minHeight: 200)
+        .frame(minWidth: 600, minHeight: 400)
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 Button {
@@ -102,15 +132,4 @@ struct ContentView: View {
         .navigationSubtitle("\(parsedTBX.contents.terms.count == 1 ? 0 : parsedTBX.contents.terms.count) items loaded")
     }
     
-    /*
-    var searchResults: ParsedTBX {
-        if searchString.isEmpty {
-            return parsedTBX
-        } else {
-            return $parsedTBX.filter {
-                $0.contains(searchString)
-            }
-        }
-    }
-    */
 }
