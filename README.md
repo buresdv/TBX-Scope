@@ -12,12 +12,12 @@ TBX Scope can load the entire Microsoft Terminology collection (around 33,000 in
 I often have to work with TBX files while doing translations. I got bored of opening them up in slow and clunky CAT software, so I made this utility to open and read them blazingly fast
 
 ## Roadmap
-Here are the things that are implemented, and things that are still left to implement:
+Here are the things that are implemented, and things that are still left to be implemented:
 - [x] Parsing and showing basic source-target pairs
 - [x] Nice performance
 - [x] Correctly showing more than one target term per one source term
 - [x] Showing some basic metadata
-- [ ] Searching through the terms
+- [x] Searching through the terms
 - [ ] Showing more metadata
 - [ ] Support for TBXs that have more than two languages
 - [ ] Support for more tags (like *source*, *context* and *date*)

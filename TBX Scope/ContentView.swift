@@ -21,18 +21,6 @@ struct ContentView: View {
         if searchString.isEmpty {
             return parsedTBX.contents.terms
         } else {
-            /*if !parsedTBX.contents.terms.filter({ term in
-                term.sourceTerm.description.localizedCaseInsensitiveContains(searchString)
-            }).isEmpty {
-                return parsedTBX.contents.terms.filter { term in
-                    term.sourceTerm.description.localizedCaseInsensitiveContains(searchString)
-                }
-            } else {
-                return parsedTBX.contents.terms.filter { term in
-                    term.targetTerm.description.localizedCaseInsensitiveContains(searchString)
-                }
-            }*/
-            
             return parsedTBX.contents.terms.filter({ $0.sourceTerm.description.localizedCaseInsensitiveContains(searchString) || $0.targetTerm.description.localizedCaseInsensitiveContains(searchString) })
         }
     }
@@ -42,9 +30,10 @@ struct ContentView: View {
             switch appState.loading {
             case .ready:
                 Text("Ready to load")
+                
             case .loading:
-                ProgressView()
-                Text("Loading")
+                ProgressView("Loading")
+                
             case .finished:
                 
                 VStack {
