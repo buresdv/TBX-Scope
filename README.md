@@ -11,7 +11,7 @@ TBX Scope can load the entire Microsoft Terminology collection (around 33,000 in
 ## Why make this?
 I often have to work with TBX files while doing translations. I got bored of opening them up in slow and clunky CAT software, so I made this utility to open and read them blazingly fast
 
-## Have you found this app interesting?
+## Have you found this app useful?
 [![Buy me a pizza](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/davidbures)
 
 ## Roadmap

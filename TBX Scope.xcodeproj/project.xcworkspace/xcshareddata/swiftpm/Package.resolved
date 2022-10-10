@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftyxmlparser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yahoojapan/SwiftyXMLParser.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d7a1d23f04c86c1cd2e8f19247dd15d74e0ea8be"
+      }
+    }
+  ],
+  "version" : 2
+}
