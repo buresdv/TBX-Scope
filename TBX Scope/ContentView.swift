@@ -39,24 +39,9 @@ struct ContentView: View {
                         
                         // TODO: This is code duplication fix it!
                         Button {
-                            do {
-                                selectedFile = try selectFile()
-                                Task {
-                                    do {
-                                        appState.loading = .loading
-                                        let contentsOfTBX: String = try await loadContentsOfFile(path: selectedFile!)
-                                        
-                                        
-                                        parsedTBX.contents = try! parseXML(from: contentsOfTBX)
-                                        
-                                        appState.loading = .finished
-                                    } catch let error as NSError {
-                                        print("Failed while reading file: \(error)")
-                                    }
-                                }
-                            } catch let error as NSError {
-                                print(error)
-                            }
+                            
+                            loadUpFileData(appState: appState, parsedTBX: parsedTBX)
+                            
                         } label: {
                             Text("Open TBX File")
                             
@@ -100,24 +85,9 @@ struct ContentView: View {
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 Button {
-                    do {
-                        selectedFile = try selectFile()
-                        Task {
-                            do {
-                                appState.loading = .loading
-                                let contentsOfTBX: String = try await loadContentsOfFile(path: selectedFile!)
-                                
-                                
-                                parsedTBX.contents = try! parseXML(from: contentsOfTBX)
-                                
-                                appState.loading = .finished
-                            } catch let error as NSError {
-                                print("Failed while reading file: \(error)")
-                            }
-                        }
-                    } catch let error as NSError {
-                        print(error)
-                    }
+                    
+                    loadUpFileData(appState: appState, parsedTBX: parsedTBX)
+                    
                 } label: {
                     Label("Open TBX File", systemImage: "plus")
                     
@@ -144,27 +114,10 @@ struct ContentView: View {
             providers.first?.loadDataRepresentation(forTypeIdentifier: "public.file-url", completionHandler: { (data, error) in
                 if let data = data, let path = String(data: data, encoding: .utf8), let url = URL(string: path as String) {
                     
-                    
-                    
                     if url.pathExtension == "tbx" {
                         print("Correct File Format")
                         
-                        //TODO: Another code duplication. Seriously, fix it
-                        selectedFile = url
-                        Task {
-                            
-                            do {
-                                appState.loading = .loading
-                                let contentsOfTBX: String = try await loadContentsOfFile(path: selectedFile!)
-                                
-                                
-                                parsedTBX.contents = try! parseXML(from: contentsOfTBX)
-                                
-                                appState.loading = .finished
-                            } catch let error as NSError {
-                                print("Failed while reading file: \(error)")
-                            }
-                        }
+                        loadUpFileData(appState: appState, parsedTBX: parsedTBX, manualSelectedFile: url)
                         
                     } else {
                         print("Incorrect file format")

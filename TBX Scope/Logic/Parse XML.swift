@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyXMLParser
 
-func parseXML(from string: String) throws -> TBX {
+func parseXML(from string: String) async throws -> TBX {
     var parsedTermStorage = [Term]()
     
     let xml = try! XML.parse(string)
