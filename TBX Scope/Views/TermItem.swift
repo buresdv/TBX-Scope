@@ -34,9 +34,6 @@ struct TermItem: View {
                 VStack(alignment: .leading) {
                     Text(term.targetTerm.joined(separator: "\n"))
                         .font(Font.system(size: 12).italic())
-                    /*ForEach(term.targetTerm, id: \.self) { targetTerm in
-                        Text(targetTerm)
-                    }*/
                 }
             }
             
@@ -48,6 +45,25 @@ struct TermItem: View {
             
         }
         .padding()
+        .frame(
+            minWidth: 0,
+            maxWidth: .infinity
+        )
+        .background(Color.black.opacity(0.0001)) // This hack has to be here, because if this color isn't here, the Context Menu doesn't show up. Doesn't make any fucking sense at all
+        .contextMenu {
+            Button {
+                copyToClipboard(textToCopy: term.sourceTerm.joined())
+            } label: {
+                Text("Copy source term")
+            }
+
+            Button {
+                copyToClipboard(textToCopy: term.targetTerm.joined(separator: ", "))
+            } label: {
+                Text("Copy target term")
+            }
+
+        }
         .textSelection(.enabled)
         
         Divider()

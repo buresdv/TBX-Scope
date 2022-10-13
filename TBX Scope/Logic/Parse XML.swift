@@ -40,7 +40,7 @@ func parseXML(from string: String) throws -> TBX {
             parsedSourceTermStorage.append(hit["termGrp", "term"].text!)
         }
         
-        // Within all terms, iterate over their possible translations ()
+        // Within all terms, iterate over their possible translations
         for hit in hit[pathToTargetTerms] {
             parsedTargetTermStorage.append(hit["termGrp", "term"].text!)
         }

@@ -89,7 +89,7 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        .searchable(text: $searchString).keyboardShortcut("f", modifiers: [.command])
+                        .searchable(text: $searchString)
                     }
                 } else {
                     DragPromptView()
