@@ -22,6 +22,13 @@ struct TBX_ScopeApp: App {
             CommandGroup(replacing: .newItem) { }
             CommandGroup(replacing: .pasteboard) { }
             CommandGroup(replacing: .undoRedo) { }
+            CommandGroup(replacing: CommandGroupPlacement.appInfo) {
+                Button(action: {
+                    appDelegate.showAboutPanel()
+                }) {
+                    Text("About TBX Scope")
+                }
+            }
         }
     }
 }

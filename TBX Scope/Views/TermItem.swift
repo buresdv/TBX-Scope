@@ -26,9 +26,6 @@ struct TermItem: View {
                             .clipShape(Capsule())
                     }
                     
-                    /*ForEach(term.sourceTerm, id: \.self) { sourceTerm in
-                        Text(sourceTerm)
-                    }*/
                 }
                 
                 VStack(alignment: .leading) {
@@ -60,7 +57,11 @@ struct TermItem: View {
             Button {
                 copyToClipboard(textToCopy: term.targetTerm.joined(separator: ", "))
             } label: {
-                Text("Copy target term")
+                if term.targetTerm.count == 1 {
+                    Text("Copy target term")
+                } else {
+                    Text("Copy target terms")
+                }
             }
 
         }

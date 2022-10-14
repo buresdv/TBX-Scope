@@ -26,10 +26,6 @@ struct TBXInfoView: NSViewRepresentable {
         
         grid.column(at: 0).xPlacement = .trailing
         
-        /*NSLayoutConstraint.activate([
-            grid.centerXAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutXAxisAnchor>#>)
-        ])*/
-        
         return grid
     }
     
