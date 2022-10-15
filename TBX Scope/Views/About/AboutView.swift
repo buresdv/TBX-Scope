@@ -17,7 +17,7 @@ struct AboutView: View {
             
             VStack(alignment: .leading, spacing: 20) {
                 VStack(alignment: .leading) {
-                    Text("TBX Scope")
+                    Text(NSApplication.appName!)
                         .font(.title)
                     Text("Version \(NSApplication.appVersion!) (\(NSApplication.buildVersion!))")
                         .font(.caption)

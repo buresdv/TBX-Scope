@@ -26,7 +26,7 @@ struct TBX_ScopeApp: App {
                 Button(action: {
                     appDelegate.showAboutPanel()
                 }) {
-                    Text("About TBX Scope")
+                    Text("About \(NSApplication.appName!)")
                 }
             }
         }

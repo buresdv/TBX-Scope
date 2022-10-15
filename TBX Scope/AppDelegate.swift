@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let window = NSWindow()
             
             window.styleMask = styleMask
-            window.title = "About TBX Scope"
+            window.title = "About \(NSApplication.appName!)"
             window.contentView = NSHostingView(rootView: AboutView())
             
             aboutWindowController = NSWindowController(window: window)
