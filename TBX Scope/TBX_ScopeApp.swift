@@ -11,9 +11,12 @@ import SwiftUI
 struct TBX_ScopeApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @ObservedObject var appState = AppState()
+    @ObservedObject var parsedTBX = ParsedTBX()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(appState: appState, parsedTBX: parsedTBX)
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
                 }
@@ -22,12 +25,23 @@ struct TBX_ScopeApp: App {
             CommandGroup(replacing: .newItem) { }
             CommandGroup(replacing: .pasteboard) { }
             CommandGroup(replacing: .undoRedo) { }
+            
             CommandGroup(replacing: CommandGroupPlacement.appInfo) {
                 Button(action: {
                     appDelegate.showAboutPanel()
                 }) {
                     Text("About \(NSApplication.appName!)")
                 }
+            }
+            
+            CommandGroup(after: CommandGroupPlacement.appInfo) {
+                Divider()
+                Button {
+                    appState.isShowingSupportSheet.toggle()
+                } label: {
+                    Text("Support \(NSApplication.appName!)")
+                }
+
             }
         }
     }

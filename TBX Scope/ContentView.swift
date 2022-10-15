@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var appState = AppState()
-    @ObservedObject var parsedTBX = ParsedTBX()
-    
+    @ObservedObject var appState: AppState
+    @ObservedObject var parsedTBX: ParsedTBX
+        
     @State private var selectedFile: URL?
     @State private var isShowingMoreInfo: Bool = false
     
@@ -80,6 +80,13 @@ struct ContentView: View {
                     DragPromptView()
                 }
             }
+            Text("App State: \(String(appState.isShowingSupportSheet))")
+            Button {
+                appState.isShowingSupportSheet.toggle()
+            } label: {
+                Text("Toggle sheet")
+            }
+
         }
         .frame(minWidth: 600, minHeight: 400)
         .toolbar {
@@ -126,6 +133,10 @@ struct ContentView: View {
                 }
             })
             return true
+        }
+        
+        .sheet(isPresented: $appState.isShowingSupportSheet) {
+            SupportView(isShowingSheet: $appState.isShowingSupportSheet)
         }
 
     }

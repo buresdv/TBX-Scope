@@ -16,6 +16,8 @@ enum LoadingState {
 
 class AppState: ObservableObject {
     @Published var loading: LoadingState = .ready
+    
+    @Published var isShowingSupportSheet: Bool = false
 }
 
 class ParsedTBX: ObservableObject {
