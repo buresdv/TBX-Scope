@@ -80,13 +80,6 @@ struct ContentView: View {
                     DragPromptView()
                 }
             }
-            Text("App State: \(String(appState.isShowingSupportSheet))")
-            Button {
-                appState.isShowingSupportSheet.toggle()
-            } label: {
-                Text("Toggle sheet")
-            }
-
         }
         .frame(minWidth: 600, minHeight: 400)
         .toolbar {
