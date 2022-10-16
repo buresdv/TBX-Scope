@@ -10,6 +10,7 @@
 		6359045028AC076D00653DBA /* TBXInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359044F28AC076D00653DBA /* TBXInfoView.swift */; };
 		6361E5FB28F9D1DA00380F5A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361E5FA28F9D1DA00380F5A /* AboutView.swift */; };
 		6361E5FE28F9D60E00380F5A /* Get App Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361E5FD28F9D60E00380F5A /* Get App Version.swift */; };
+		637D7BF928FCA509008FEABD /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 637D7BF828FCA509008FEABD /* ConfettiSwiftUI */; };
 		6395874528B023E500C2AB64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395874428B022A100C2AB64 /* AppDelegate.swift */; };
 		63A402C528F8B42F00222CE1 /* Copy to Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A402C428F8B42F00222CE1 /* Copy to Clipboard.swift */; };
 		63ACD4CD28FABBE1004CEFC7 /* Get App Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ACD4CC28FABBE1004CEFC7 /* Get App Name.swift */; };
@@ -28,6 +29,7 @@
 		63C4ADE628AAB5E900BEFE6C /* App State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4ADE528AAB5E900BEFE6C /* App State.swift */; };
 		63C4ADE828AAB7FA00BEFE6C /* Parse XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4ADE728AAB7FA00BEFE6C /* Parse XML.swift */; };
 		63D1240428F7538400849CBE /* Load Up File Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D1240328F7538400849CBE /* Load Up File Data.swift */; };
+		63F0969C28FC294D004D5BE7 /* Store Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F0969B28FC294D004D5BE7 /* Store Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,7 @@
 		63A402C428F8B42F00222CE1 /* Copy to Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Copy to Clipboard.swift"; sourceTree = "<group>"; };
 		63ACD4CC28FABBE1004CEFC7 /* Get App Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get App Name.swift"; sourceTree = "<group>"; };
 		63ACD4D028FB43EF004CEFC7 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
+		63ACD4D928FB5EDF004CEFC7 /* Tip.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tip.storekit; sourceTree = "<group>"; };
 		63B8295C28F73EA500294FAB /* DragPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragPromptView.swift; sourceTree = "<group>"; };
 		63BC138228AAC1B900DFBEA1 /* TBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBX.swift; sourceTree = "<group>"; };
 		63BC138428AAC25100DFBEA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		63C4ADE528AAB5E900BEFE6C /* App State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App State.swift"; sourceTree = "<group>"; };
 		63C4ADE728AAB7FA00BEFE6C /* Parse XML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parse XML.swift"; sourceTree = "<group>"; };
 		63D1240328F7538400849CBE /* Load Up File Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Load Up File Data.swift"; sourceTree = "<group>"; };
+		63F0969B28FC294D004D5BE7 /* Store Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store Manager.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637D7BF928FCA509008FEABD /* ConfettiSwiftUI in Frameworks */,
 				63C4ADDE28AAB05600BEFE6C /* SwiftyXMLParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +88,14 @@
 				63ACD4CC28FABBE1004CEFC7 /* Get App Name.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		63ACD4D528FB5C27004CEFC7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				63ACD4D028FB43EF004CEFC7 /* SupportView.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		63BC138128AAC18800DFBEA1 /* Structs */ = {
@@ -125,6 +138,7 @@
 				63C4ADD628AAAFF200BEFE6C /* TBX_Scope.entitlements */,
 				63C4ADD328AAAFF200BEFE6C /* Preview Content */,
 				63C4ADE528AAB5E900BEFE6C /* App State.swift */,
+				63ACD4D928FB5EDF004CEFC7 /* Tip.storekit */,
 			);
 			path = "TBX Scope";
 			sourceTree = "<group>";
@@ -140,6 +154,7 @@
 		63C4ADDF28AAB07700BEFE6C /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				63F0969A28FC2923004D5BE7 /* Store */,
 				63C4ADE128AAB0C800BEFE6C /* Select File.swift */,
 				63C4ADE328AAB50C00BEFE6C /* Load Contents of File.swift */,
 				63C4ADE728AAB7FA00BEFE6C /* Parse XML.swift */,
@@ -152,13 +167,21 @@
 		63C4ADE028AAB07C00BEFE6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63ACD4D528FB5C27004CEFC7 /* Support */,
 				6361E5F928F9D1D100380F5A /* About */,
 				63BC138728AAE98900DFBEA1 /* TermItem.swift */,
 				6359044F28AC076D00653DBA /* TBXInfoView.swift */,
 				63B8295C28F73EA500294FAB /* DragPromptView.swift */,
-				63ACD4D028FB43EF004CEFC7 /* SupportView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		63F0969A28FC2923004D5BE7 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				63F0969B28FC294D004D5BE7 /* Store Manager.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +202,7 @@
 			name = "TBX Scope";
 			packageProductDependencies = (
 				63C4ADDD28AAB05600BEFE6C /* SwiftyXMLParser */,
+				637D7BF828FCA509008FEABD /* ConfettiSwiftUI */,
 			);
 			productName = "TBX Scope";
 			productReference = 63C4ADCA28AAAFF100BEFE6C /* TBX Scope.app */;
@@ -210,6 +234,7 @@
 			mainGroup = 63C4ADC128AAAFF100BEFE6C;
 			packageReferences = (
 				63C4ADDC28AAB05600BEFE6C /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
+				637D7BF728FCA509008FEABD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 63C4ADCB28AAAFF100BEFE6C /* Products */;
 			projectDirPath = "";
@@ -244,6 +269,7 @@
 				6361E5FB28F9D1DA00380F5A /* AboutView.swift in Sources */,
 				63ACD4CD28FABBE1004CEFC7 /* Get App Name.swift in Sources */,
 				63BC138328AAC1B900DFBEA1 /* TBX.swift in Sources */,
+				63F0969C28FC294D004D5BE7 /* Store Manager.swift in Sources */,
 				63C4ADE228AAB0C800BEFE6C /* Select File.swift in Sources */,
 				6361E5FE28F9D60E00380F5A /* Get App Version.swift in Sources */,
 				63A402C528F8B42F00222CE1 /* Copy to Clipboard.swift in Sources */,
@@ -383,7 +409,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TBX Scope/TBX_Scope.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"TBX Scope/Preview Content\"";
 				DEVELOPMENT_TEAM = ZSVA6DVZHM;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -396,7 +422,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.davidbures.TBX-Scope";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -413,7 +439,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TBX Scope/TBX_Scope.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"TBX Scope/Preview Content\"";
 				DEVELOPMENT_TEAM = ZSVA6DVZHM;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -426,7 +452,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.davidbures.TBX-Scope";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -458,6 +484,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		637D7BF728FCA509008FEABD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		63C4ADDC28AAB05600BEFE6C /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yahoojapan/SwiftyXMLParser.git";
@@ -469,6 +503,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		637D7BF828FCA509008FEABD /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 637D7BF728FCA509008FEABD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
 		63C4ADDD28AAB05600BEFE6C /* SwiftyXMLParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 63C4ADDC28AAB05600BEFE6C /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */;

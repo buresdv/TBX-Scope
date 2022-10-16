@@ -7,6 +7,7 @@
 
 import AppKit
 import SwiftUI
+import StoreKit
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
