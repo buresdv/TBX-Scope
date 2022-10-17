@@ -19,6 +19,15 @@ struct TBX_ScopeApp: App {
             ContentView(appState: appState, parsedTBX: parsedTBX)
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
+                    
+                    //print("Times tipped: (called on app start)")
+                    //print(UserDefaults.standard.integer(forKey: "timesTipped"))
+                    
+                    if UserDefaults.standard.integer(forKey: "timesTipped") == 0 {
+                        appState.isShowingThanks = false
+                    } else {
+                        appState.isShowingThanks = true
+                    }
                 }
         }
         .commands {

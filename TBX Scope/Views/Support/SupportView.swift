@@ -11,9 +11,9 @@ import ConfettiSwiftUI
 
 struct SupportView: View {
     
-    @Binding var isShowingSheet: Bool
+    @ObservedObject var appState: AppState
     
-    @State private var isShowingThanks: Bool = false
+    @Binding var isShowingSheet: Bool
     
     @StateObject var storeManager = StoreManager()
     
@@ -35,10 +35,10 @@ struct SupportView: View {
                                 .font(.subheadline)
                         }
                         
-                        Text("This app is completely free and open source.\nIf you enjoy using it and would like to support it, you can drop a few pennies in the tip jar.")
+                        Text("This app is completely free and open source.\nIf you enjoy using it and would like to support it, you can drop a few pennies into the tip jar.")
                         
                         VStack {
-                            if isShowingThanks {
+                            if appState.isShowingThanks {
                                 Text("Thank you so much for your support!\nThanks to you, I can keep my apps free and open source.")
                             } else {
                                 Text("Who knows, there might even be a little surprise for you :)")
@@ -84,18 +84,12 @@ struct SupportView: View {
         .onAppear {
             Task {
                 await storeManager.fetchProducts()
-                
-                if storeManager.timesTipped > 0 {
-                    withAnimation {
-                        isShowingThanks = true
-                    }
-                }
             }
         }
         .onChange(of: storeManager.timesTipped, perform: { newValue in
             if newValue > 0 {
                 withAnimation {
-                    isShowingThanks = true
+                    appState.isShowingThanks = true
                 }
             }
         })

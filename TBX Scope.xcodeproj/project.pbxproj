@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6302941728FD9DB600217473 /* Increment UserDefaults Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302941628FD9DB600217473 /* Increment UserDefaults Key.swift */; };
+		6302941A28FDA17100217473 /* Purge User Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302941928FDA17100217473 /* Purge User Defaults.swift */; };
 		6359045028AC076D00653DBA /* TBXInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359044F28AC076D00653DBA /* TBXInfoView.swift */; };
 		6361E5FB28F9D1DA00380F5A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361E5FA28F9D1DA00380F5A /* AboutView.swift */; };
 		6361E5FE28F9D60E00380F5A /* Get App Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361E5FD28F9D60E00380F5A /* Get App Version.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6302941628FD9DB600217473 /* Increment UserDefaults Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Increment UserDefaults Key.swift"; sourceTree = "<group>"; };
+		6302941928FDA17100217473 /* Purge User Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Purge User Defaults.swift"; sourceTree = "<group>"; };
 		6359044F28AC076D00653DBA /* TBXInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBXInfoView.swift; sourceTree = "<group>"; };
 		6361E5FA28F9D1DA00380F5A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		6361E5FD28F9D60E00380F5A /* Get App Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get App Version.swift"; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6302941828FDA16200217473 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				6302941628FD9DB600217473 /* Increment UserDefaults Key.swift */,
+				6302941928FDA17100217473 /* Purge User Defaults.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
 		6361E5F928F9D1D100380F5A /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +167,7 @@
 		63C4ADDF28AAB07700BEFE6C /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				6302941828FDA16200217473 /* User Defaults */,
 				63F0969A28FC2923004D5BE7 /* Store */,
 				63C4ADE128AAB0C800BEFE6C /* Select File.swift */,
 				63C4ADE328AAB50C00BEFE6C /* Load Contents of File.swift */,
@@ -265,7 +279,9 @@
 				6395874528B023E500C2AB64 /* AppDelegate.swift in Sources */,
 				63BC138828AAE98900DFBEA1 /* TermItem.swift in Sources */,
 				63C4ADD028AAAFF100BEFE6C /* ContentView.swift in Sources */,
+				6302941A28FDA17100217473 /* Purge User Defaults.swift in Sources */,
 				63C4ADE428AAB50C00BEFE6C /* Load Contents of File.swift in Sources */,
+				6302941728FD9DB600217473 /* Increment UserDefaults Key.swift in Sources */,
 				6361E5FB28F9D1DA00380F5A /* AboutView.swift in Sources */,
 				63ACD4CD28FABBE1004CEFC7 /* Get App Name.swift in Sources */,
 				63BC138328AAC1B900DFBEA1 /* TBX.swift in Sources */,

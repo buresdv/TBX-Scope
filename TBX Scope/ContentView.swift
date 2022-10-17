@@ -129,7 +129,7 @@ struct ContentView: View {
         }
         
         .sheet(isPresented: $appState.isShowingSupportSheet) {
-            SupportView(isShowingSheet: $appState.isShowingSupportSheet)
+            SupportView(appState: appState, isShowingSheet: $appState.isShowingSupportSheet)
         }
 
     }

@@ -18,6 +18,8 @@ class AppState: ObservableObject {
     @Published var loading: LoadingState = .ready
     
     @Published var isShowingSupportSheet: Bool = false
+    
+    @Published var isShowingThanks: Bool = false
 }
 
 class ParsedTBX: ObservableObject {

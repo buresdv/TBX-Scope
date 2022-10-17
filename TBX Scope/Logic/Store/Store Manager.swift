@@ -16,7 +16,7 @@ class StoreManager: ObservableObject {
     func fetchProducts() async -> Void {
         do {
             let products = try await Product.products(for: ["tip"])
-            print(products)
+            // print(products)
             
             DispatchQueue.main.async {
                 self.products = products
@@ -43,15 +43,13 @@ class StoreManager: ObservableObject {
                     await signedType.finish()
                     
                     print("Bought \(signedType.productID) (\(signedType.id))")
-                    DispatchQueue.main.async { [self] in
-                        if self.timesTipped == 0 {
-                            self.timesTipped = 1
-                        } else {
-                            self.timesTipped += 1
-                        }
+                    DispatchQueue.main.async {
+                        
+                        incrementUserDefaultsKeyValue(defaults: UserDefaults.standard, for: "timesTipped")
+                        
+                        self.timesTipped = UserDefaults.standard.integer(forKey: "timesTipped")
+                        
                     }
-                    print("Tipped \(timesTipped) times")
-                    
                 }
             case .userCancelled:
                 print("User cancelled the purchase")
