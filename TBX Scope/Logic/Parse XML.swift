@@ -13,6 +13,9 @@ func parseXML(from string: String) async throws -> TBX {
     
     var implementationFormat: Int
     
+    /// The implementation of the format. Possible values:
+    /// - 0: Reference format
+    /// - 1: Microsoft format
     if string.contains("<tig>") {
         implementationFormat = 0
     } else {
@@ -28,9 +31,29 @@ func parseXML(from string: String) async throws -> TBX {
     let parsedDescription = xml[pathToDescription].text!
     
     let pathToTerms: [String] = ["martif", "text", "body", "termEntry"]
-    let pathToSourceDescription: [XMLSubscriptType] = ["langSet", 0, "descripGrp", "descrip"]
-    let pathToSourceTerms: [XMLSubscriptType] = ["langSet", 0, "ntig"]
-    let pathToTargetTerms: [XMLSubscriptType] = ["langSet", 1, "ntig"]
+    
+    var pathToSourceDescription: [XMLSubscriptType]
+    var pathToSourceTerms: [XMLSubscriptType]
+    var pathToTargetTerms: [XMLSubscriptType]
+    
+    switch implementationFormat {
+        
+    /// Reference Format
+    case 0:
+        pathToSourceDescription = ["langSet", 0, "descripGrp", "definition"]
+        pathToSourceTerms = ["langSet", 0, "tig"]
+        pathToTargetTerms = ["langSet", 1, "tig"]
+        
+    /// Microsoft Format
+    case 1:
+        pathToSourceDescription = ["langSet", 0, "descripGrp", "descrip"]
+        pathToSourceTerms = ["langSet", 0, "ntig"]
+        pathToTargetTerms = ["langSet", 1, "ntig"]
+        
+    default:
+        fatalError()
+        
+    }
     
     // Iterate over all the terms (text -> body -> termEntry)
     for hit in xml[pathToTerms] {
@@ -39,18 +62,59 @@ func parseXML(from string: String) async throws -> TBX {
         
         let parsedTermID: String = hit.attributes["id"]!
         
-        let parsedTermNote: String? = hit["langSet", 0, "ntig", "termGrp", "termNote"].text
+        var parsedTermNote: String?
+        
+        switch implementationFormat {
+            
+        /// Reference Format
+        case 0:
+            parsedTermNote = hit["langSet", 0, "tig", "partOfSpeech"].text
+            
+        /// Microsoft Format
+        case 1:
+            parsedTermNote = hit["langSet", 0, "ntig", "termGrp", "termNote"].text
+            
+        default:
+            fatalError()
+        }
         
         // Get the term's description
         let parsedTermDescription: String? = hit[pathToSourceDescription].text
         
         for hit in hit[pathToSourceTerms] {
-            parsedSourceTermStorage.append(hit["termGrp", "term"].text!)
+            
+            switch implementationFormat {
+            
+            /// Reference Format
+            case 0:
+                parsedSourceTermStorage.append(hit["term"].text!)
+                
+            /// Microsoft Format
+            case 1:
+                parsedSourceTermStorage.append(hit["termGrp", "term"].text!)
+                
+            default:
+                fatalError()
+            }
         }
         
         // Within all terms, iterate over their possible translations
         for hit in hit[pathToTargetTerms] {
-            parsedTargetTermStorage.append(hit["termGrp", "term"].text!)
+            
+            switch implementationFormat {
+            
+            /// Reference Format
+            case 0:
+                parsedTargetTermStorage.append(hit["term"].text!)
+                
+            /// Microsoft Format
+            case 1:
+                parsedTargetTermStorage.append(hit["termGrp", "term"].text!)
+                
+            default:
+                fatalError()
+            }
+            
         }
         
         parsedTermStorage.append(Term(id: parsedTermID, sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, termNote: parsedTermNote, termContext: "Ahoj", description: parsedTermDescription))
