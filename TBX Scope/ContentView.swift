@@ -37,7 +37,6 @@ struct ContentView: View {
                             .foregroundColor(Color(nsColor: NSColor.lightGray))
                             .font(.title)
                         
-                        // TODO: This is code duplication fix it!
                         Button {
                             
                             loadUpFileData(appState: appState, parsedTBX: parsedTBX)
@@ -53,7 +52,7 @@ struct ContentView: View {
                 }
                 
             case .loading:
-                ProgressView("Loading")
+                ProgressView("Reading File")
                 
             case .finished:
                 if !isDragging {
