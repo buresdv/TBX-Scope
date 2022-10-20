@@ -11,6 +11,14 @@ import SwiftyXMLParser
 func parseXML(from string: String) async throws -> TBX {
     var parsedTermStorage = [Term]()
     
+    var implementationFormat: Int
+    
+    if string.contains("<tig>") {
+        implementationFormat = 0
+    } else {
+        implementationFormat = 1
+    }
+    
     let xml = try! XML.parse(string)
     
     let pathToTitle: [String] = ["martif", "martifHeader", "fileDesc", "titleStmt", "title"]
@@ -48,7 +56,7 @@ func parseXML(from string: String) async throws -> TBX {
         parsedTermStorage.append(Term(id: parsedTermID, sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, termNote: parsedTermNote, termContext: "Ahoj", description: parsedTermDescription))
     }
     
-    print(parsedTermStorage)
+    //print(parsedTermStorage)
     
-    return TBX(title: parsedTitle, description: parsedDescription, terms: parsedTermStorage)
+    return TBX(title: parsedTitle, description: parsedDescription, implementationFormat: implementationFormat, terms: parsedTermStorage)
 }
