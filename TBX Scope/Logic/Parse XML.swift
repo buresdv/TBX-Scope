@@ -13,7 +13,7 @@ func parseXML(from string: String) async throws -> TBX {
     
     var implementationFormat: Int
     
-    /// The implementation of the format. Possible values:
+    /// The implementation of the TBX format. Possible values:
     /// - 0: Reference format
     /// - 1: Microsoft format
     if string.contains("<tig>") {
@@ -32,23 +32,35 @@ func parseXML(from string: String) async throws -> TBX {
     
     let pathToTerms: [String] = ["martif", "text", "body", "termEntry"]
     
-    var pathToSourceDescription: [XMLSubscriptType]
-    var pathToSourceTerms: [XMLSubscriptType]
-    var pathToTargetTerms: [XMLSubscriptType]
+    var sourceTermDescriptionPath: [XMLSubscriptType]
+    var sourceTermGroupPath: [XMLSubscriptType]
+    var targetTermGroupPath: [XMLSubscriptType]
+    
+    var termContentsPath: [XMLSubscriptType]
+    
+    var termNotePath: [XMLSubscriptType]
     
     switch implementationFormat {
         
     /// Reference Format
     case 0:
-        pathToSourceDescription = ["langSet", 0, "descripGrp", "definition"]
-        pathToSourceTerms = ["langSet", 0, "tig"]
-        pathToTargetTerms = ["langSet", 1, "tig"]
+        sourceTermDescriptionPath = ["langSet", 0, "descripGrp", "definition"]
+        sourceTermGroupPath = ["langSet", 0, "tig"]
+        targetTermGroupPath = ["langSet", 1, "tig"]
+        
+        termContentsPath = ["term"]
+        
+        termNotePath = ["langSet", 0, "tig", "partOfSpeech"]
         
     /// Microsoft Format
     case 1:
-        pathToSourceDescription = ["langSet", 0, "descripGrp", "descrip"]
-        pathToSourceTerms = ["langSet", 0, "ntig"]
-        pathToTargetTerms = ["langSet", 1, "ntig"]
+        sourceTermDescriptionPath = ["langSet", 0, "descripGrp", "descrip"]
+        sourceTermGroupPath = ["langSet", 0, "ntig"]
+        targetTermGroupPath = ["langSet", 1, "ntig"]
+        
+        termContentsPath = ["termGrp", "term"]
+        
+        termNotePath = ["langSet", 0, "ntig", "termGrp", "termNote"]
         
     default:
         fatalError()
@@ -62,59 +74,18 @@ func parseXML(from string: String) async throws -> TBX {
         
         let parsedTermID: String = hit.attributes["id"]!
         
-        var parsedTermNote: String?
-        
-        switch implementationFormat {
-            
-        /// Reference Format
-        case 0:
-            parsedTermNote = hit["langSet", 0, "tig", "partOfSpeech"].text
-            
-        /// Microsoft Format
-        case 1:
-            parsedTermNote = hit["langSet", 0, "ntig", "termGrp", "termNote"].text
-            
-        default:
-            fatalError()
-        }
+        let parsedTermNote: String? = hit[termNotePath].text
         
         // Get the term's description
-        let parsedTermDescription: String? = hit[pathToSourceDescription].text
+        let parsedTermDescription: String? = hit[sourceTermDescriptionPath].text
         
-        for hit in hit[pathToSourceTerms] {
-            
-            switch implementationFormat {
-            
-            /// Reference Format
-            case 0:
-                parsedSourceTermStorage.append(hit["term"].text!)
-                
-            /// Microsoft Format
-            case 1:
-                parsedSourceTermStorage.append(hit["termGrp", "term"].text!)
-                
-            default:
-                fatalError()
-            }
+        for hit in hit[sourceTermGroupPath] {
+            parsedSourceTermStorage.append(hit[termContentsPath].text!)
         }
         
         // Within all terms, iterate over their possible translations
-        for hit in hit[pathToTargetTerms] {
-            
-            switch implementationFormat {
-            
-            /// Reference Format
-            case 0:
-                parsedTargetTermStorage.append(hit["term"].text!)
-                
-            /// Microsoft Format
-            case 1:
-                parsedTargetTermStorage.append(hit["termGrp", "term"].text!)
-                
-            default:
-                fatalError()
-            }
-            
+        for hit in hit[targetTermGroupPath] {
+            parsedTargetTermStorage.append(hit[termContentsPath].text!)
         }
         
         parsedTermStorage.append(Term(id: parsedTermID, sourceTerm: parsedSourceTermStorage, targetTerm: parsedTargetTermStorage, termNote: parsedTermNote, termContext: "Ahoj", description: parsedTermDescription))
