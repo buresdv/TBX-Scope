@@ -8,7 +8,11 @@
 import Foundation
 import SwiftyXMLParser
 
-func parseXML(from string: String) async throws -> TBX {
+enum ParsingError: Error {
+    case unknownTBXImplementation
+}
+
+func parseXML(from string: String, appState: AppState) async throws -> TBX {
     var parsedTermStorage = [Term]()
     
     var implementationFormat: Int
@@ -24,13 +28,13 @@ func parseXML(from string: String) async throws -> TBX {
     
     let xml = try! XML.parse(string)
     
-    let pathToTitle: [String] = ["martif", "martifHeader", "fileDesc", "titleStmt", "title"]
+    let pathToTitle: [XMLSubscriptType] = ["martif", "martifHeader", "fileDesc", "titleStmt", "title"]
     let parsedTitle = xml[pathToTitle].text!
     
-    let pathToDescription: [String] = ["martif", "martifHeader", "fileDesc", "sourceDesc", "p"]
+    let pathToDescription: [XMLSubscriptType] = ["martif", "martifHeader", "fileDesc", "sourceDesc", "p"]
     let parsedDescription = xml[pathToDescription].text!
     
-    let pathToTerms: [String] = ["martif", "text", "body", "termEntry"]
+    let pathToTerms: [XMLSubscriptType] = ["martif", "text", "body", "termEntry"]
     
     var sourceTermDescriptionPath: [XMLSubscriptType]
     var sourceTermGroupPath: [XMLSubscriptType]
@@ -41,7 +45,6 @@ func parseXML(from string: String) async throws -> TBX {
     var termNotePath: [XMLSubscriptType]
     
     switch implementationFormat {
-        
     /// Reference Format
     case 0:
         sourceTermDescriptionPath = ["langSet", 0, "descripGrp", "definition"]
@@ -63,8 +66,8 @@ func parseXML(from string: String) async throws -> TBX {
         termNotePath = ["langSet", 0, "ntig", "termGrp", "termNote"]
         
     default:
-        fatalError()
-        
+        appState.loading = .error
+        throw ParsingError.unknownTBXImplementation
     }
     
     // Iterate over all the terms (text -> body -> termEntry)

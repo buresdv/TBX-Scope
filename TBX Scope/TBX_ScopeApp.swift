@@ -52,6 +52,33 @@ struct TBX_ScopeApp: App {
                 }
 
             }
+            
+            CommandGroup(before: .newItem) {
+                Button {
+                    loadUpFileData(appState: appState, parsedTBX: parsedTBX)
+                } label: {
+                    Text("Open File")
+                }
+                .keyboardShortcut("o", modifiers: .command)
+            }
+            
+            CommandGroup(before: .toolbar) {
+                if appState.loading == .finished {
+                    Button {
+                        withAnimation {
+                            appState.isShowingMoreInfo.toggle()
+                        }
+                    } label: {
+                        if appState.isShowingMoreInfo == true {
+                            Text("Hide More TBX Info")
+                        } else {
+                            Text("Show More TBX Info")
+                        }
+                    }
+                    .keyboardShortcut("i", modifiers: [.command])
+                    Divider()
+                }
+            }
         }
     }
 }

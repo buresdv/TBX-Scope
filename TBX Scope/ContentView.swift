@@ -13,7 +13,6 @@ struct ContentView: View {
     @ObservedObject var parsedTBX: ParsedTBX
         
     @State private var selectedFile: URL?
-    @State private var isShowingMoreInfo: Bool = false
     
     @State private var searchString: String = ""
     
@@ -45,7 +44,6 @@ struct ContentView: View {
                             Text("Open TBX File")
                             
                         }
-                        .keyboardShortcut("o", modifiers: [.command])
                     }
                 } else {
                     DragPromptView()
@@ -58,11 +56,13 @@ struct ContentView: View {
                 if !isDragging {
                     VStack {
                         
-                        if isShowingMoreInfo {
+                        if appState.isShowingMoreInfo {
                             
                             TBXInfoView(data: parsedTBX)
                                 .padding()
                                 .fixedSize()
+                                .background(Color.white)
+                                .frame(minWidth: 0, maxWidth: .infinity)
                             
                         }
                         
@@ -78,6 +78,9 @@ struct ContentView: View {
                 } else {
                     DragPromptView()
                 }
+                
+            case .error:
+                ErrorWhileOpeningView(errorText: "Unsupported TBX Specification Implementaton")
             }
         }
         .frame(minWidth: 600, minHeight: 400)
@@ -91,17 +94,15 @@ struct ContentView: View {
                     Label("Open TBX File", systemImage: "plus")
                     
                 }
-                .keyboardShortcut("o", modifiers: [.command])
                 
                 if appState.loading == .finished {
                     Button {
                         withAnimation {
-                            isShowingMoreInfo.toggle()
+                            appState.isShowingMoreInfo.toggle()
                         }
                     } label: {
                         Label("TBX Info", systemImage: "info")
                     }
-                    .keyboardShortcut("i", modifiers: [.command])
                 }
             }
             

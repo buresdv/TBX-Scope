@@ -12,10 +12,13 @@ enum LoadingState {
     case ready
     case loading
     case finished
+    case error
 }
 
 class AppState: ObservableObject {
     @Published var loading: LoadingState = .ready
+    
+    @Published var isShowingMoreInfo: Bool = false
     
     @Published var isShowingSupportSheet: Bool = false
     

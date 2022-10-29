@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6302941728FD9DB600217473 /* Increment UserDefaults Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302941628FD9DB600217473 /* Increment UserDefaults Key.swift */; };
 		6302941A28FDA17100217473 /* Purge User Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302941928FDA17100217473 /* Purge User Defaults.swift */; };
+		634F1245290311EB00A5A4E8 /* ErrowWhileOpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634F1244290311EB00A5A4E8 /* ErrowWhileOpeningView.swift */; };
 		6359045028AC076D00653DBA /* TBXInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359044F28AC076D00653DBA /* TBXInfoView.swift */; };
 		6361E5FB28F9D1DA00380F5A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361E5FA28F9D1DA00380F5A /* AboutView.swift */; };
 		6361E5FE28F9D60E00380F5A /* Get App Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361E5FD28F9D60E00380F5A /* Get App Version.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		6302941628FD9DB600217473 /* Increment UserDefaults Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Increment UserDefaults Key.swift"; sourceTree = "<group>"; };
 		6302941928FDA17100217473 /* Purge User Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Purge User Defaults.swift"; sourceTree = "<group>"; };
+		634F1244290311EB00A5A4E8 /* ErrowWhileOpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrowWhileOpeningView.swift; sourceTree = "<group>"; };
 		6359044F28AC076D00653DBA /* TBXInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBXInfoView.swift; sourceTree = "<group>"; };
 		6361E5FA28F9D1DA00380F5A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		6361E5FD28F9D60E00380F5A /* Get App Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get App Version.swift"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				63BC138728AAE98900DFBEA1 /* TermItem.swift */,
 				6359044F28AC076D00653DBA /* TBXInfoView.swift */,
 				63B8295C28F73EA500294FAB /* DragPromptView.swift */,
+				634F1244290311EB00A5A4E8 /* ErrowWhileOpeningView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				63A402C528F8B42F00222CE1 /* Copy to Clipboard.swift in Sources */,
 				63D1240428F7538400849CBE /* Load Up File Data.swift in Sources */,
 				6359045028AC076D00653DBA /* TBXInfoView.swift in Sources */,
+				634F1245290311EB00A5A4E8 /* ErrowWhileOpeningView.swift in Sources */,
 				63ACD4D128FB43EF004CEFC7 /* SupportView.swift in Sources */,
 				63C4ADCE28AAAFF100BEFE6C /* TBX_ScopeApp.swift in Sources */,
 				63BC138628AAC2D200DFBEA1 /* Term.swift in Sources */,

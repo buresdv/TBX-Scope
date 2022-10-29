@@ -31,7 +31,7 @@ func loadUpFileData(appState: AppState, parsedTBX: ParsedTBX, manualSelectedFile
                 let contentsOfTBX: String = try await loadContentsOfFile(path: selectedFile!)
                 
                 /// Parse the selected file
-                parsedTBX.contents = try! await parseXML(from: contentsOfTBX)
+                parsedTBX.contents = try! await parseXML(from: contentsOfTBX, appState: appState)
                 
                 /// Make the app show the parsed result
                 appState.loading = .finished
