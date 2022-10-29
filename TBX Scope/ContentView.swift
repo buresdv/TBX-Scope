@@ -80,7 +80,7 @@ struct ContentView: View {
                 }
                 
             case .error:
-                ErrorWhileOpeningView(errorText: "Unsupported TBX Specification Implementaton")
+                ErrorWhileOpeningView(errorText: "Unsupported TBX Implementaton")
             }
         }
         .frame(minWidth: 600, minHeight: 400)
