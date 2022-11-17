@@ -1,0 +1,35 @@
+{
+  "identifier" : "83DBEBD1",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "1650097395",
+      "localizations" : [
+        {
+          "description" : "A small tip. Thank you very much <3",
+          "displayName" : "Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "tip",
+      "referenceName" : "Tip",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6443783473",
+    "_developerTeamID" : "ZSVA6DVZHM",
+    "_lastSynchronizedDate" : 687620150.412009
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

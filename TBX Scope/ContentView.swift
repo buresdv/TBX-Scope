@@ -59,11 +59,9 @@ struct ContentView: View {
                         if appState.isShowingMoreInfo {
                             
                             TBXInfoView(data: parsedTBX)
-                                .padding()
-                                .fixedSize()
-                                .background(Color.white)
-                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .padding(.horizontal)
                             
+                            Divider()
                         }
                         
                         ScrollView {
