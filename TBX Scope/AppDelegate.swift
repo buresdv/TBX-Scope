@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             aboutWindowController = NSWindowController(window: window)
         }
-        
+        aboutWindowController?.window?.center()
         aboutWindowController?.showWindow(aboutWindowController?.window)
     }
 }
