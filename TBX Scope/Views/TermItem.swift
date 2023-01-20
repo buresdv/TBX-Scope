@@ -16,7 +16,7 @@ struct TermItem: View {
     var body: some View {
         VStack(spacing: 5) {
             HStack(alignment: .top) {
-                VStack {
+                VStack(alignment: .trailing) {
                     Text(term.sourceTerm.joined(separator: "\n"))
                     
                     if let termNote = term.termNote {
