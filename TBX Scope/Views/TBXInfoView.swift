@@ -61,37 +61,27 @@ struct TBXInfoView: View {
     }
     
     var body: some View {
-        VStack(alignment: .custom, spacing: 10) {
-            HStack {
+        
+        Grid(alignment: .leading) {
+            GridRow(alignment: .firstTextBaseline) {
                 Text("Name:")
+                    .gridColumnAlignment(.trailing)
                 Text(data.contents.title)
-                    .alignmentGuide(.custom) {
-                        $0[.leading]
-                    }
             }
-            
-            HStack {
+            GridRow(alignment: .firstTextBaseline) {
                 Text("Description:")
+                    .gridColumnAlignment(.trailing)
                 Text(data.contents.description)
-                    .alignmentGuide(.custom) {
-                        $0[.leading]
-                    }
             }
-            
-            HStack {
-                Text("Number of terms:")
-                Text(String(data.contents.terms.count))
-                    .alignmentGuide(.custom) {
-                        $0[.leading]
-                    }
+            GridRow(alignment: .firstTextBaseline) {
+                Text("Number of Terms:")
+                    .gridColumnAlignment(.trailing)
+                Text(String(describing: data.contents.terms.count))
             }
-            
-            HStack {
+            GridRow(alignment: .firstTextBaseline) {
                 Text("Implementation Format:")
+                    .gridColumnAlignment(.trailing)
                 Text(implementationFormatString)
-                    .alignmentGuide(.custom) {
-                        $0[.leading]
-                    }
             }
         }
         .padding()
