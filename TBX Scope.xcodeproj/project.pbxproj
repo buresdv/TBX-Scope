@@ -257,6 +257,7 @@
 			packageReferences = (
 				63C4ADDC28AAB05600BEFE6C /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
 				637D7BF728FCA509008FEABD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				6326AA0C297B09CE00762C49 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */,
 			);
 			productRefGroup = 63C4ADCB28AAAFF100BEFE6C /* Products */;
 			projectDirPath = "";
@@ -511,6 +512,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6326AA0C297B09CE00762C49 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/karamage/SwiftUIMargin.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		637D7BF728FCA509008FEABD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";

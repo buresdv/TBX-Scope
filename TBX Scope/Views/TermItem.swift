@@ -11,10 +11,12 @@ struct TermItem: View {
     
     @State var term: Term
     
+    let window = NSApplication.shared.windows.filter({ $0.isKeyWindow }).first!
+    
     var body: some View {
         VStack(spacing: 5) {
             HStack(alignment: .top) {
-                VStack(alignment: .trailing) {
+                VStack {
                     Text(term.sourceTerm.joined(separator: "\n"))
                     
                     if let termNote = term.termNote {
@@ -27,11 +29,15 @@ struct TermItem: View {
                     }
                     
                 }
+                .frame(width: window.frame.width/2, alignment: .trailing)
                 
-                VStack(alignment: .leading) {
+                
+                VStack {
                     Text(term.targetTerm.joined(separator: "\n"))
                         .font(Font.system(size: 12).italic())
                 }
+                .frame(width: window.frame.width/2, alignment: .leading)
+                
             }
             
             if let termDescription = term.description {

@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "swiftuimargin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/karamage/SwiftUIMargin.git",
+      "state" : {
+        "revision" : "bcd659084d786705f708e8cd458d2a420d5775cf",
+        "version" : "0.1.1"
+      }
+    },
+    {
       "identity" : "swiftyxmlparser",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yahoojapan/SwiftyXMLParser.git",
